@@ -63,7 +63,7 @@ Mediana de 5 execuções por dataset (cada uma em um processo novo), numa máqui
 | item | valor |
 |---|---|
 | CPU | AMD Ryzen 5 5500, 6 núcleos / 12 threads, até 4,27 GHz (boost ligado), L3 16 MiB |
-| Memória | 14 GiB |
+| Memória | 16 GB instalados (14,9 GiB visíveis ao sistema) |
 | Disco | NVMe Kingston SNV2S1000G, 1 TB |
 | Sistema | Ubuntu 26.04.1 LTS, kernel 7.0.0-38-generic |
 | Runtime | Node 26.13.0 |
