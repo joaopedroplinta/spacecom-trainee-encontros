@@ -18,10 +18,11 @@ for (const n of [1, 2]) {
   const esperado: Encontro[] = JSON.parse(readFileSync(`dados/respostas${n}.json`, 'utf8'));
   console.log(`grid x respostas${n}:`, comparar(grid(`dados/dataset${n}.txt`), esperado));
 }
-// grid contra brute force em todos os datasets presentes (até o limite de linhas)
+// grid contra brute force nos datasets presentes; sem --todos pula arquivos > 60 MB (datasets 6 e 7) para terminar rápido
+const todos = process.argv.includes('--todos');
 for (let n = 1; n <= 7; n++) {
   const arq = `dados/dataset${n}.txt`;
-  if (!existsSync(arq) || statSync(arq).size > 60_000_000) continue;
+  if (!existsSync(arq) || (!todos && statSync(arq).size > 60_000_000)) continue;
   const t0 = performance.now();
   const b = brute(arq);
   console.log(`grid x brute dataset${n}:`, comparar(grid(arq), b), `(brute+grid ${(performance.now() - t0).toFixed(0)} ms)`);

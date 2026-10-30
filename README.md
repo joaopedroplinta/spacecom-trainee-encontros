@@ -9,7 +9,8 @@ Requer Node 22.18 ou mais novo (roda TypeScript direto, sem build e sem dependê
 ```bash
 node src/index.ts                                         # processa todos os dados/datasetN.txt (ou passe os arquivos)
 node src/index.ts dados/dataset1.txt                      # gera saida/resultadoN.json e mostra o tempo
-node src/validar.ts                                       # confere com respostas1/2.json e com o brute force
+node src/validar.ts                                       # confere com respostas1/2.json e com o brute force (datasets até 60 MB, ~3 s)
+node src/validar.ts --todos                               # inclui os datasets 6 e 7 (mais lento)
 node --test tests/                                        # testes de borda
 ```
 
