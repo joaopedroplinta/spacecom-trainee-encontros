@@ -1,0 +1,14 @@
+{
+  "name": "encontros",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.ts",
+    "validar": "node src/validar.ts",
+    "test": "node --test tests/"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  }
+}
