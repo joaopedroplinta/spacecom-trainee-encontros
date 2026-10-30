@@ -34,7 +34,7 @@ A regra "um registro por par, tipo mais específico" não está no enunciado; fo
 ## Por que esta abordagem
 
 - **Corretude:** o grid só reduz os candidatos; quem decide é o Haversine. Existe também um brute force O(k²) por timestamp (`src/brute.ts`) usado como gabarito: o grid dá resultado idêntico a ele nos datasets 1 a 7 e em nuvens aleatórias densas, e idêntico às respostas oficiais dos datasets 1 e 2.
-- **Desempenho:** o brute force compara todos os pares de cada timestamp; o grid compara só os vizinhos, então o custo cresce com a densidade local e não com o quadrado do número de pessoas. Nos datasets recebidos os grupos têm no máximo 80 posições e a leitura e conversão do texto dominam o tempo (cerca de 60% no dataset 5); a vantagem do grid cresce quando muitos monitorados compartilham o mesmo timestamp.
+- **Desempenho:** o brute force compara todos os pares de cada timestamp; o grid compara só os vizinhos, então o custo cresce com a densidade local e não com o quadrado do número de pessoas. Nos datasets recebidos os grupos têm no máximo 120 posições e a leitura e conversão do texto dominam o tempo (cerca de 60% no dataset 5); a vantagem do grid cresce quando muitos monitorados compartilham o mesmo timestamp.
 - **Simplicidade:** nenhuma dependência de execução, um arquivo por responsabilidade (`comum.ts` regras, `grid.ts` algoritmo, `index.ts` CLI).
 
 ## Limitações
