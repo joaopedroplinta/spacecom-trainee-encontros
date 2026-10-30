@@ -54,4 +54,19 @@ A regra "um registro por par, tipo mais específico" não está no enunciado; fo
 | 6 | 8 milhões | 27 | 9.530 ms |
 | 7 | 12 milhões | 35 | 14.386 ms |
 
-Saídas em `saida/`. Tempos (leitura + algoritmo, sem a escrita do JSON) medidos num AMD Ryzen 5 5500 (12 threads), 14 GB de RAM, Linux sem interface gráfica, CPU em modo `performance`, Node 26.13. Os datasets 6 e 7 (8 e 12 milhões de linhas) rodam com pico de ~930 MB de memória graças à leitura em blocos.
+Saídas em `saida/`. Os tempos incluem leitura e algoritmo, sem a escrita do JSON. Os datasets 6 e 7 (8 e 12 milhões de linhas) rodam com pico de ~930 MB de memória graças à leitura em blocos.
+
+### Ambiente da medição
+
+Mediana de 5 execuções por dataset (cada uma em um processo novo), numa máquina dedicada, sem outras cargas:
+
+| item | valor |
+|---|---|
+| CPU | AMD Ryzen 5 5500, 6 núcleos / 12 threads, até 4,27 GHz (boost ligado), L3 16 MiB |
+| Memória | 14 GiB |
+| Disco | NVMe Kingston SNV2S1000G, 1 TB |
+| Sistema | Ubuntu 26.04.1 LTS, kernel 7.0.0-38-generic |
+| Runtime | Node 26.13.0 |
+| Configuração | sem interface gráfica (`multi-user.target`), CPU em modo `performance` |
+
+O código usa uma única thread, então o número de núcleos não acelera o resultado.
