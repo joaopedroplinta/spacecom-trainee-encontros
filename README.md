@@ -44,14 +44,14 @@ A regra "um registro por par, tipo mais específico" não está no enunciado; fo
 
 ## Resultados dos datasets de teste
 
-| dataset | encontros | tempo (grid) |
-|---|---|---|
-| 1 | 4 | 16 ms |
-| 2 | 6 | 43 ms |
-| 3 | 10 | 141 ms |
-| 4 | 15 | 587 ms |
-| 5 | 21 | 1.435 ms |
-| 6 | 27 | 12.372 ms |
-| 7 | 35 | 18.622 ms |
+| dataset | linhas | encontros | tempo (mediana de 5) |
+|---|---|---|---|
+| 1 | 5 mil | 4 | 15 ms |
+| 2 | 25 mil | 6 | 48 ms |
+| 3 | 100 mil | 10 | 150 ms |
+| 4 | 400 mil | 15 | 593 ms |
+| 5 | 1 milhão | 21 | 1.332 ms |
+| 6 | 8 milhões | 27 | 9.530 ms |
+| 7 | 12 milhões | 35 | 14.386 ms |
 
-Saídas em `saida/`. Tempos medidos num notebook, Node 26. Os datasets 6 e 7 (8 e 12 milhões de linhas) rodam com pico de ~930 MB de memória graças à leitura em blocos.
+Saídas em `saida/`. Tempos (leitura + algoritmo, sem a escrita do JSON) medidos num AMD Ryzen 5 5500 (12 threads), 14 GB de RAM, Linux sem interface gráfica, CPU em modo `performance`, Node 26.13. Os datasets 6 e 7 (8 e 12 milhões de linhas) rodam com pico de ~930 MB de memória graças à leitura em blocos.
